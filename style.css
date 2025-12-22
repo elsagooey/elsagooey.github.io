@@ -1,0 +1,62 @@
+/* Modern Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Section */
+header {
+    background: #24292e; /* GitHub Dark Gray */
+    color: white;
+    width: 100%;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Project Cards Container */
+.container {
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Basic Button Style */
+.btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+
+.social-links {
+    display: flex;
+    gap: 20px;            /* Space between the icons */
+    justify-content: center; /* Centers them on the page */
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;          /* keeps both icons the same size */
+    height: 40px;         /* ensures a square aspect ratio */
+    object-fit: contain;  /* prevents squishing the logo */
+    transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
