@@ -3,12 +3,12 @@
    ========================================================================== */
    :root {
     --bg-dark: #24292e;      /* GitHub Dark Gray */
-    --bg-card: #2c3238;      /* Slightly lighter gray for the About box */
-    --bg-light: #f4f4f9;     /* Light Gray Page Background */
+    --bg-card: #2c3238;      /* slightly lighter gray for the About box */
+    --bg-light: #f4f4f9;     /* kight gray page background */
     --text-main: #333333;
     --text-muted: #adb5bd;
     --text-white: #ffffff;
-    --accent: #ffffff;       /* Re-adding Blue for contrast */
+    --accent: #ffffff;      
     --accent-hover: #0056b3;
     --white: #ffffff;
     --transition: all 0.3s ease;
@@ -41,7 +41,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: clamp(3rem, 10vw, 4.5rem); /* Scales based on screen size */
+    font-size: clamp(3rem, 10vw, 4.5rem); /* Scales based on screensize!! */
     margin-bottom: 0;
     animation: fadeIn 1.5s ease-out;
 }
@@ -68,7 +68,7 @@ body {
     flex-wrap: wrap;       /* This allows items to move to the next line if too narrow */
     max-width: 1100px;
     margin: 0 auto;
-    align-items: flex-start; /* Aligns items to the top */
+    align-items: flex-start;     /* Aligns items to the top */
     justify-content: center;
     gap: 40px;
     padding: 40px 20px;
@@ -76,7 +76,7 @@ body {
 
 .left-col {
     flex: 1;
-    min-width: 300px;      /* Prevents the left side from getting too skinny */
+    min-width: 300px;      /* Prevents the left side from getting too teaaaa */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,7 +85,7 @@ body {
 
 .right-col {
     flex: 1.5;
-    min-width: 350px;      /* Prevents the text from getting too skinny */
+    min-width: 350px;      /* Prevents the text from getting too skinnyyyyyy (bella hadiddd) */
     background-color: var(--bg-card);
     padding: 40px;
     border-radius: 20px;
@@ -228,4 +228,81 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
+}
+
+.icon-hint {
+    font-size: 0.85rem;    
+    color: var(--text-muted); 
+    margin-top: 5px;       
+    font-style: italic;    
+}
+
+
+
+/* ==========================================================================
+   7. I added A SKILLS SECTION
+   ========================================================================== */
+/* Skills Section Styling */
+.skills-split {
+    width: 100%;
+    background-color: var(--bg-light); 
+    padding: 80px 0;
+    color: var(--text-main);
+}
+
+.skills-text {
+    flex: 1;
+    text-align: left;
+}
+
+.skills-text h2 {
+    color: var(--bg-dark);
+    border-bottom: 3px solid var(--accent);
+}
+
+.skill-category h3 {
+    margin-bottom: 5px;
+    color: var(--bg-dark);
+}
+
+.skill-category p {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+/* Logos Grid on the Right */
+.skills-logos {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 logos per row */
+    gap: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.tech-logo {
+    width: 60px;
+    height: auto;
+
+    transition: var(--transition);
+    opacity: 0.8;          
+}
+.tech-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustment */
+@media (max-width: 850px) {
+    .logo-grid {
+        grid-template-columns: repeat(4, 1fr); /* More icons per row on mobile when stacked */
+        margin-top: 30px;
+    }
 }
