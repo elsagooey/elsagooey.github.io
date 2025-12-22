@@ -1,25 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Elsa's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elsa Gui | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Elsa Gui</h1>
-        <p> Computer Science @ University of Washington</p>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elsa Gui</h1>
+            <p>Computer Science @ University of Washington</p>
+            
+        </div>
+    </section>
+
+    <header id="main-header">
+        <div class="profile-container">
+            <img src="selfie.png" alt="Elsa Gui" class="profile-pic">
+            
+            <div class="profile-text">
+                <h1>Elsa Gui</h1>
+                <p>Computer Science @ University of Washington</p>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        <h2>About Me</h2>
-        <p></p>
-        <div class="social-links">
-            <a href="https://github.com/elsagooey" target="_blank">
-                <img src="githublogo.png" alt="GitHub" class="social-icon">
-            </a>
+    <main class="container">
         
-            <a href="https://www.linkedin.com/in/elsa-gui" target="_blank">
-                <img src="linkedinlogo.png" alt="LinkedIn" class="social-icon">
-            </a>
-        </div>
-        
-    </div>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am currently studying Computer Science at University of Washington, 
+                with an expected graduation date of June 2027. I am primarily focused 
+                on full stack development. When I am not at my computer, I like to 
+                collect Labubus, play badminton, and learn fun facts.
+            </p>
+            
+            <div class="social-links">
+                <a href="https://github.com/elsagooey" target="_blank">
+                    <img src="githublogo.png" alt="GitHub" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/elsa-gui" target="_blank">
+                    <img src="linkedinlogo.png" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
+        </section>
+
+        <section id="projects" style="margin-top: 50px;">
+            <h2>Projects</h2>
+            <p>Coming soon...</p>
+        </section>
+
+    </main>
+
 </body>
+</html>

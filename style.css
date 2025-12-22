@@ -1,62 +1,174 @@
-/* Modern Reset */
+/* ==========================================================================
+   1. VARIABLES & RESET
+   ========================================================================== */
+   :root {
+    --bg-dark: #24292e;      /* GitHub Dark Gray */
+    --bg-light: #f4f4f9;     /* Light Gray Page Background */
+    --text-main: #333333;
+    --text-muted: #adb5bd;
+    --accent: #007bff;       /* Primary Blue */
+    --accent-hover: #0056b3;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: var(--bg-light);
+    color: var(--text-main);
 }
 
-/* Header Section */
+/* ==========================================================================
+   2. HERO SECTION (Splash Screen)
+   ========================================================================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 0;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+    animation: fadeIn 2s ease-out;
+}
+
+
+
+/* ==========================================================================
+   3. HEADER (Profile Section)
+   ========================================================================== */
 header {
-    background: #24292e; /* GitHub Dark Gray */
-    color: white;
+    background: var(--bg-dark);
+    color: var(--white);
     width: 100%;
-    padding: 2rem 0;
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    width: 90%;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--white);
+    transition: transform 0.5s ease;
+}
+
+.profile-pic:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.profile-text h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+.profile-text p {
+    margin-top: 5px;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   4. MAIN CONTENT & UTILITIES
+   ========================================================================== */
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
     text-align: center;
 }
 
-/* Project Cards Container */
-.container {
-    max-width: 800px;
-    margin: 20px;
-    padding: 20px;
-}
-
-/* Basic Button Style */
-.btn {
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--accent);
     display: inline-block;
-    background: #007bff;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
 }
 
-.btn:hover {
-    background: #0056b3;
-}
-
-
+/* Social Icons */
 .social-links {
     display: flex;
-    gap: 20px;            /* Space between the icons */
-    justify-content: center; /* Centers them on the page */
-    margin-top: 20px;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .social-icon {
-    width: 40px;          /* keeps both icons the same size */
-    height: 40px;         /* ensures a square aspect ratio */
-    object-fit: contain;  /* prevents squishing the logo */
-    transition: transform 0.2s ease;
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    transition: var(--transition);
 }
 
 .social-icon:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-8px);
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   5. ANIMATIONS
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content h1 { font-size: 3rem; }
 }
