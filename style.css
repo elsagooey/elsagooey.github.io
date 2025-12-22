@@ -54,7 +54,7 @@ body {
 }
 
 /* ==========================================================================
-   3. ABOUT-SPLIT SECTION (The Side-by-Side Layout)
+   3. ABOUTSPLIT SECTION SIDE BY SIDE
    ========================================================================== */
 .about-split {
     width: 100%;
@@ -65,20 +65,30 @@ body {
 
 .split-container {
     display: flex;
+    flex-wrap: wrap;       /* This allows items to move to the next line if too narrow */
     max-width: 1100px;
     margin: 0 auto;
-    align-items: center;
-    gap: 60px;
-    padding: 0 20px;
+    align-items: flex-start; /* Aligns items to the top */
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
 }
 
-/* Left Side: Profile Photo & Socials */
 .left-col {
     flex: 1;
-    text-align: center;
+    min-width: 300px;      /* Prevents the left side from getting too skinny */
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+}
+
+.right-col {
+    flex: 1.5;
+    min-width: 350px;      /* Prevents the text from getting too skinny */
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
 }
 
 .profile-pic {
@@ -131,7 +141,7 @@ body {
 }
 
 /* ==========================================================================
-   4. PROJECTS SECTION & UTILITIES
+   4. PROJECTS SECTION 
    ========================================================================== */
 .container {
     max-width: 1000px;
@@ -159,7 +169,7 @@ body {
 }
 
 /* ==========================================================================
-   5. ANIMATIONS & RESPONSIVENESS
+   5. ANIMATIONS & RESPONSIVENESS HEHE
    ========================================================================== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -178,4 +188,44 @@ body {
     }
 
     .hero-content h1 { font-size: 3rem; }
+}
+/* ==========================================================================
+   6. PROJECTSSSSS
+   ========================================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--bg-dark);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.tags span {
+    background: #e9ecef;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.btn-small {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--bg-dark);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
