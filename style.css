@@ -280,7 +280,7 @@ body {
 
 .logo-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 logos per row */
+    grid-template-columns: repeat(4, 1fr); /* 3 logos per row */
     gap: 30px;
     align-items: center;
     justify-items: center;
