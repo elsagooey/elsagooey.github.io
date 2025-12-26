@@ -1,16 +1,13 @@
-/* ==========================================================================
-   1. VARIABLES & RESET
-   ========================================================================== */
+/* 1. VARIABLES */
    :root {
-    --bg-dark: #24292e;      /* GitHub Dark Gray */
-    --bg-card: #2c3238;      /* slightly lighter gray for the About box */
-    --bg-light: #f4f4f9;     /* kight gray page background */
-    --text-main: #333333;
-    --text-muted: #adb5bd;
-    --text-white: #ffffff;
-    --accent: #ffffff;      
-    --accent-hover: #0056b3;
-    --white: #ffffff;
+    --bg-main: #fffafb;      
+    --bg-accent: #fff0f3;    
+    --bg-card: #ffffff;     
+    --border-pink: #fce4e4;  
+    --accent-pink: #f4c2c9; 
+    --dark-pink: #d88a8a;    
+    --text-main: #6b5b5b;    
+    --text-muted: #a08585;
     --transition: all 0.3s ease;
 }
 
@@ -19,56 +16,58 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Georgia', serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-light);
+    background-color: var(--bg-main);
     color: var(--text-main);
 }
 
-/* ==========================================================================
-   2. HERO SECTION
-   ========================================================================== */
+/* HERO SECTION */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--bg-dark);
-    color: var(--white);
+    background-color: var(--bg-accent);
+    background-image: radial-gradient(var(--border-pink) 1px, transparent 1px);
+    background-size: 30px 30px; /* polka dot pattern for bg*/
+    color: var(--dark-pink);
     text-align: center;
 }
 
 .hero-content h1 {
-    font-size: clamp(3rem, 10vw, 4.5rem); /* Scales based on screensize!! */
+    font-size: clamp(3rem, 10vw, 4.5rem);
+    font-weight: 200;
+    font-style: italic;
     margin-bottom: 0;
+    letter-spacing: 3px;
     animation: fadeIn 1.5s ease-out;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text-muted);
     margin-top: 10px;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
     animation: fadeIn 2s ease-out;
 }
 
-/* ==========================================================================
-   3. ABOUTSPLIT SECTION SIDE BY SIDE
-   ========================================================================== */
+/* ABOUT SECTION */
 .about-split {
     width: 100%;
-    background-color: var(--bg-dark);
-    color: var(--white);
+    background-color: var(--bg-main);
     padding: 100px 0;
 }
 
 .split-container {
     display: flex;
-    flex-wrap: wrap;       /* This allows items to move to the next line if too narrow */
+    flex-wrap: wrap;
     max-width: 1100px;
     margin: 0 auto;
-    align-items: flex-start;     /* Aligns items to the top */
+    align-items: flex-start;
     justify-content: center;
     gap: 40px;
     padding: 40px 20px;
@@ -76,19 +75,11 @@ body {
 
 .left-col {
     flex: 1;
-    min-width: 300px;      /* Prevents the left side from getting too teaaaa */
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-
-.right-col {
-    flex: 1.5;
-    min-width: 350px;      /* Prevents the text from getting too skinnyyyyyy (bella hadiddd) */
-    background-color: var(--bg-card);
-    padding: 40px;
-    border-radius: 20px;
 }
 
 .profile-pic {
@@ -96,81 +87,184 @@ body {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--white);
+    border: 6px solid white;
+    box-shadow: 0 8px 20px rgba(244, 194, 201, 0.3);
     margin-bottom: 20px;
     transition: transform 0.5s ease;
 }
 
 .profile-pic:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(2deg);
 }
 
 .profile-text h1 {
     font-size: 2.5rem;
-    margin: 0;
+    color: var(--dark-pink);
+    font-style: italic;
 }
 
-.profile-text p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin: 10px 0;
-}
-
-/* Right Side: About Box */
 .right-col {
     flex: 1.5;
+    min-width: 350px;
     background-color: var(--bg-card);
     padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    border-radius: 30px;
+    border: 1px solid var(--border-pink);
+    box-shadow: 0 15px 35px rgba(216, 138, 138, 0.1);
 }
 
 .right-col h2 {
     margin-top: 0;
     font-size: 2rem;
-    color: var(--white);
-    border-bottom: 3px solid var(--accent);
+    color: var(--dark-pink);
+    border-bottom: 2px solid var(--border-pink);
     display: inline-block;
     padding-bottom: 5px;
+    font-style: italic;
 }
 
 .right-col p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     line-height: 1.8;
-    color: #e0e0e0;
 }
 
-/* ==========================================================================
-   4. PROJECTS SECTION 
-   ========================================================================== */
+/*SKILLS SECTION*/
+.skills-split {
+    width: 100%;
+    background-color: var(--bg-accent);
+    padding: 80px 0;
+    border-top: 1px solid var(--border-pink);
+    border-bottom: 1px solid var(--border-pink);
+}
+
+.skills-text h2 {
+    color: var(--dark-pink);
+    font-style: italic;
+}
+
+.skill-category h3 {
+    color: var(--text-main);
+    font-size: 1.2rem;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.tech-logo {
+    width: 50px;
+    height: auto;
+    filter: none;        
+    opacity: 1;           
+    transition: var(--transition);
+}
+
+.tech-logo:hover {
+    transform: scale(1.1); /*popeffect on hover */
+}
+
+/* PROJECTS SECTION */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 80px auto;
     padding: 0 20px;
     text-align: center;
 }
 
+#projects h2 {
+    color: var(--dark-pink);
+    font-size: 2.5rem;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    padding: 35px;
+    border-radius: 25px;
+    text-align: left;
+    border: 1px solid var(--border-pink);
+    border-top: 6px solid var(--accent-pink);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(244, 194, 201, 0.2);
+}
+
+.project-card h3 {
+    color: var(--dark-pink);
+    margin-top: 0;
+}
+
+.tags span {
+    background: var(--bg-accent);
+    color: var(--dark-pink);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-right: 8px;
+    border: 1px solid var(--border-pink);
+}
+
+.btn-small {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--dark-pink);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed var(--accent-pink);
+    transition: var(--transition);
+}
+
+.btn-small:hover {
+    color: var(--accent-pink);
+    letter-spacing: 1px;
+}
+
+/*SOCIAL LINKS & FOOTER*/
 .social-links {
     display: flex;
-    gap: 20px;
-    margin-top: 15px;
+    gap: 25px;
+    margin-top: 25px;
 }
+
 
 .social-icon {
     width: 40px;
     height: 40px;
+    object-fit: contain;
     transition: var(--transition);
-    /* If your icons are black, this makes them white on the dark background */
-   
+  
 }
 
 .social-icon:hover {
     transform: translateY(-5px);
+   
 }
 
-/* ==========================================================================
-   5. ANIMATIONS & RESPONSIVENESS HEHE
-   ========================================================================== */
+.icon-hint {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* ANIMATIONS*/
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -179,130 +273,15 @@ body {
 @media (max-width: 850px) {
     .split-container {
         flex-direction: column;
-        gap: 40px;
+        align-items: center;
     }
     
     .right-col {
+        width: 90%;
         padding: 30px;
-        width: 100%;
     }
 
-    .hero-content h1 { font-size: 3rem; }
-}
-/* ==========================================================================
-   6. PROJECTSSSSS
-   ========================================================================== */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.project-card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--bg-dark);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-}
-
-.tags span {
-    background: #e9ecef;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    margin-right: 5px;
-}
-
-.btn-small {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--bg-dark);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.icon-hint {
-    font-size: 0.85rem;    
-    color: var(--text-muted); 
-    margin-top: 5px;       
-    font-style: italic;    
-}
-
-
-
-/* ==========================================================================
-   7. I added A SKILLS SECTION
-   ========================================================================== */
-/* Skills Section Styling */
-.skills-split {
-    width: 100%;
-    background-color: var(--bg-light); 
-    padding: 80px 0;
-    color: var(--text-main);
-}
-
-.skills-text {
-    flex: 1;
-    text-align: left;
-}
-
-.skills-text h2 {
-    color: var(--bg-dark);
-    border-bottom: 3px solid var(--accent);
-}
-
-.skill-category h3 {
-    margin-bottom: 5px;
-    color: var(--bg-dark);
-}
-
-.skill-category p {
-    margin-top: 0;
-    font-size: 1.1rem;
-}
-
-/* Logos Grid on the Right */
-.skills-logos {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 3 logos per row */
-    gap: 30px;
-    align-items: center;
-    justify-items: center;
-}
-
-.tech-logo {
-    width: 60px;
-    height: auto;
-
-    transition: var(--transition);
-    opacity: 0.8;          
-}
-.tech-logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-/* Responsive adjustment */
-@media (max-width: 850px) {
     .logo-grid {
-        grid-template-columns: repeat(4, 1fr); /* More icons per row on mobile when stacked */
-        margin-top: 30px;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
