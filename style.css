@@ -14,7 +14,40 @@
 html {
     scroll-behavior: smooth;
 }
+body {
+    overflow-x: hidden; 
+}
 
+/*timeline */
+.responsive-gif {
+    height: 50px; /* desktop size */
+    vertical-align: middle;
+  }
+  
+  @media (max-width: 600px) {
+    .responsive-gif {
+      height: 30px; /* mobile size */
+    }
+  }
+.timeline-item {
+    will-change: opacity, transform; 
+}
+
+.timeline-icon {
+    width: 28px;            
+    height: 28px;
+    margin-right: 12px;
+    vertical-align: middle;  
+    object-fit: contain;
+    
+    filter: drop-shadow(0 2px 4px rgba(244, 194, 201, 0.4)); 
+}
+
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.2) rotate(-5deg);
+    transition: transform 0.3s ease;
+}
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
@@ -137,14 +170,43 @@ body {
     border-bottom: 1px solid var(--border-pink);
 }
 
+.skills-split .split-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+    gap: 60px; 
+}
+
+.skills-text {
+    flex: 1.2; 
+    min-width: 0; 
+}
+
 .skills-text h2 {
     color: var(--dark-pink);
     font-style: italic;
+    margin-top: 0;
+}
+
+.skill-category {
+    margin-bottom: 25px;
 }
 
 .skill-category h3 {
     color: var(--text-main);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.skill-category p {
+    margin: 0;
+    line-height: 1.6;
+    word-wrap: break-word; 
+}
+
+.skills-logos {
+    flex: 1;
+    width: 100%;
 }
 
 .logo-grid {
@@ -155,6 +217,7 @@ body {
     justify-items: center;
 }
 
+
 .tech-logo {
     width: 50px;
     height: auto;
@@ -163,8 +226,21 @@ body {
     transition: var(--transition);
 }
 
+
 .tech-logo:hover {
-    transform: scale(1.1); /*popeffect on hover */
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 850px) {
+    .skills-split .split-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .skills-text, .skills-logos {
+        width: 100%;
+    }
 }
 
 /* PROJECTS SECTION */
@@ -211,24 +287,28 @@ body {
 
 .project-image {
     width: 100%;
-    aspect-ratio: 4 / 3; /* This is the "standard" screenshot ratio */
+    aspect-ratio: 4 / 3; 
     overflow: hidden;
     border-radius: 15px;
     margin-bottom: 20px;
     border: 1px solid var(--border-pink);
-    background-color: #f9f9f9; /* Placeholder color */
+    background-color: #f9f9f9; 
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fills the 4:3 box perfectly */
-    object-position: top; /* Keeps the top of your site/app visible */
+    object-fit: cover; 
+    object-position: top; 
     transition: transform 0.3s ease;
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.05); /* Subtle zoom on hover */
+    transform: scale(1.05); /* zoom on hover */
+}
+
+.project-card .btn-small:not(:last-child) {
+    margin-right: 20px; 
 }
 
 .tags span {
@@ -306,4 +386,78 @@ body {
     .logo-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+/*timeline*/
+.timeline-section {
+    padding: 80px 0;
+    background-color: var(--bg-main);
+}
+
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.timeline {
+    position: relative;
+    margin-top: 50px;
+}
+
+/* The vertical pink line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent-pink);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 60px;
+}
+
+/* The pink dots on the line */
+.timeline-dot {
+    position: absolute;
+    left: 11px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 3px solid var(--dark-pink);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-content {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid var(--border-pink);
+    box-shadow: 0 5px 15px rgba(216, 138, 138, 0.05);
+}
+
+.timeline-content h3 {
+    margin: 10px 0 5px 0;
+    color: var(--dark-pink);
+    font-style: italic;
+}
+
+.timeline-content .date {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
 }
