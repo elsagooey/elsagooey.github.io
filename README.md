@@ -1,20 +1,16 @@
-# 📸 Photobooth
+# My Portfolio Website
 
-A fun and interactive web-based photobooth application that captures a sequence of photos and assembles them into a classic photobooth-style photostrip.
+A personal website built to showcase my journey!!!
 
-### 🔗 **[Try the Live Demo Here!](https://elsagooey.github.io/photobooth/)**
+### 🔗 **[View Live Site](https://elsagooey.github.io/)**
 
 ---
 
-## Features
-* **Automatic Sequence:** Automatically takes 4 pictures in a row with a countdown, photobooth style
-* **Photostrip Layout:** Arranges your captured images into vertical photobooth/photostrip style
-* **Custom Filters:** Choose between colored photos or a vintage black & white (B&W) look
-* **Instant Results:** View your assembled photostrip immediately after the final shot and will be able to save it directly.
+## Overview
+This website will be updated with details of my journey in Computer Science!
 
 
-## Built With
-* **HTML5 / CSS3** - For structure and the photostrip styling
-* **JavaScript** - Using the Webcam API for image capture and timing logic
-* **GitHub Pages** - For hosting the live demonstration
-
+## 🛠️ Built With
+* **HTML5 / CSS3** - Modern structure and custom styling
+* **JavaScript** - For interactive elements and dynamic project loading
+* **GitHub Pages** - Fast and reliable hosting directly from this repository
