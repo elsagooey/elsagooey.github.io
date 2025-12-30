@@ -10,7 +10,7 @@ A personal website built to showcase my journey!!!
 This website will be updated with details of my journey in Computer Science!
 
 
-## 🛠️ Built With
+## Built With
 * **HTML5 / CSS3** - Modern structure and custom styling
 * **JavaScript** - For interactive elements and dynamic project loading
 * **GitHub Pages** - Fast and reliable hosting directly from this repository
