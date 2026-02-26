@@ -1,5 +1,5 @@
 /* 1. VARIABLES */
-   :root {
+:root {
     --bg-main: #fffafb;      
     --bg-accent: #fff0f3;    
     --bg-card: #ffffff;     
@@ -14,41 +14,9 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     overflow-x: hidden; 
-}
-
-/*timeline */
-.responsive-gif {
-    height: 50px; /* desktop size */
-    vertical-align: middle;
-  }
-  
-  @media (max-width: 600px) {
-    .responsive-gif {
-      height: 30px; /* mobile size */
-    }
-  }
-.timeline-item {
-    will-change: opacity, transform; 
-}
-
-.timeline-icon {
-    width: 28px;            
-    height: 28px;
-    margin-right: 12px;
-    vertical-align: middle;  
-    object-fit: contain;
-    
-    filter: drop-shadow(0 2px 4px rgba(244, 194, 201, 0.4)); 
-}
-
-
-.timeline-item:hover .timeline-icon {
-    transform: scale(1.2) rotate(-5deg);
-    transition: transform 0.3s ease;
-}
-body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
     margin: 0;
@@ -57,7 +25,63 @@ body {
     color: var(--text-main);
 }
 
-/* HERO SECTION */
+/* 2. NAVIGATION BAR */
+.navbar {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 250, 251, 0.95);
+    backdrop-filter: blur(5px); 
+    border-bottom: 1px solid var(--border-pink);
+    z-index: 1000; 
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: var(--dark-pink);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--dark-pink);
+}
+
+/* 3. SECTION SPACING (FIX FOR NAV OVERLAP) */
+section {
+    scroll-margin-top: 80px; 
+}
+
+/* 4. HERO SECTION */
 .hero {
     height: 100vh;
     display: flex;
@@ -65,7 +89,7 @@ body {
     justify-content: center;
     background-color: var(--bg-accent);
     background-image: radial-gradient(var(--border-pink) 1px, transparent 1px);
-    background-size: 30px 30px; /* polka dot pattern for bg*/
+    background-size: 30px 30px; 
     color: var(--dark-pink);
     text-align: center;
 }
@@ -88,7 +112,7 @@ body {
     animation: fadeIn 2s ease-out;
 }
 
-/* ABOUT SECTION */
+/* 5. ABOUT SECTION */
 .about-split {
     width: 100%;
     background-color: var(--bg-main);
@@ -161,7 +185,7 @@ body {
     line-height: 1.8;
 }
 
-/*SKILLS SECTION*/
+/* 6. SKILLS SECTION */
 .skills-split {
     width: 100%;
     background-color: var(--bg-accent);
@@ -217,33 +241,17 @@ body {
     justify-items: center;
 }
 
-
 .tech-logo {
     width: 50px;
     height: auto;
-    filter: none;        
-    opacity: 1;           
     transition: var(--transition);
 }
-
 
 .tech-logo:hover {
     transform: scale(1.1);
 }
 
-
-@media (max-width: 850px) {
-    .skills-split .split-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-    
-    .skills-text, .skills-logos {
-        width: 100%;
-    }
-}
-
-/* PROJECTS SECTION */
+/* 7. PROJECTS SECTION */
 .container {
     max-width: 1100px;
     margin: 80px auto;
@@ -303,12 +311,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.05); /* zoom on hover */
-}
-
-.project-card .btn-small:not(:last-child) {
-    margin-right: 20px; 
+/* TAGS */
+.tags {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 8px;       
+    margin-bottom: 20px;
 }
 
 .tags span {
@@ -318,13 +326,20 @@ body {
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: bold;
-    margin-right: 8px;
     border: 1px solid var(--border-pink);
+    white-space: nowrap; 
+}
+
+/* PROJECT LINKS (SPACING FIX) */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Creates even spacing between buttons */
+    margin-top: 15px;
 }
 
 .btn-small {
     display: inline-block;
-    margin-top: 20px;
     color: var(--dark-pink);
     text-decoration: none;
     font-weight: bold;
@@ -335,60 +350,11 @@ body {
 
 .btn-small:hover {
     color: var(--accent-pink);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    border-bottom-color: var(--dark-pink);
 }
 
-/*SOCIAL LINKS & FOOTER*/
-.social-links {
-    display: flex;
-    gap: 25px;
-    margin-top: 25px;
-}
-
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    transition: var(--transition);
-  
-}
-
-.social-icon:hover {
-    transform: translateY(-5px);
-   
-}
-
-.icon-hint {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-top: 10px;
-}
-
-/* ANIMATIONS*/
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 850px) {
-    .split-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .right-col {
-        width: 90%;
-        padding: 30px;
-    }
-
-    .logo-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/*timeline*/
+/* 8. TIMELINE SECTION */
 .timeline-section {
     padding: 80px 0;
     background-color: var(--bg-main);
@@ -405,7 +371,6 @@ body {
     margin-top: 50px;
 }
 
-/* The vertical pink line */
 .timeline::before {
     content: '';
     position: absolute;
@@ -420,9 +385,9 @@ body {
     position: relative;
     margin-bottom: 50px;
     padding-left: 60px;
+    will-change: opacity, transform; 
 }
 
-/* The pink dots on the line */
 .timeline-dot {
     position: absolute;
     left: 11px;
@@ -457,7 +422,59 @@ body {
     letter-spacing: 1px;
 }
 
-.timeline-content p {
-    font-size: 0.95rem;
-    margin-bottom: 0;
+/* 9. SOCIAL LINKS & HINTS */
+.social-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+.icon-hint {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.responsive-gif {
+    height: 50px; 
+    vertical-align: middle;
+}
+
+/* 10. ANIMATIONS & MEDIA QUERIES */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 850px) {
+    .split-container, .skills-split .split-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .right-col, .skills-text, .skills-logos {
+        width: 100%;
+        padding: 30px;
+    }
+    .logo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links { gap: 15px; }
+    .nav-links a { font-size: 0.8rem; }
+    .nav-logo { display: none; }
+    .responsive-gif { height: 30px; }
 }

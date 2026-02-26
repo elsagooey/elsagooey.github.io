@@ -25,3 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(item);
     });
 });
+
+
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        nav.style.padding = "10px 0";
+        nav.style.boxShadow = "0 2px 10px rgba(244, 194, 201, 0.2)";
+    } else {
+        nav.style.padding = "15px 0";
+        nav.style.boxShadow = "none";
+    }
+});

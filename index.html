@@ -7,15 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">EG</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about-split">About</a></li>
+                <li><a href="#skills-split">Skills</a></li>
+                <li><a href="#timeline-section">Journey</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="hero-content">
             <h1>Elsa Gui</h1>
             <p>Computer Science @ University of Washington</p>
         </div>
     </section>
 
-    <section class="about-split">
+    <section id="about-split" class="about-split">
         <div class="split-container">
             <div class="left-col">
                 <img src="images/selfie.png" alt="Elsa Gui" class="profile-pic">
@@ -45,7 +57,7 @@
         </div>
     </section>
 
-    <section class="skills-split">
+    <section id="skills-split" class="skills-split">
         <div class="split-container">
             <div class="skills-text">
                 <h2>Technical Skills</h2>
@@ -83,7 +95,7 @@
         </div>
     </section>
 
-    <section class="timeline-section">
+    <section id="timeline-section" class="timeline-section">
         <div class="timeline-container">
             <h2 class="title">
                 My Journey 
@@ -189,6 +201,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="images/photoboothproj.png" alt="Photobooth">
@@ -214,14 +227,13 @@
                         <h3>Music Share</h3>
                         <p>(APP IN PROGRESS) Co-leading the full-stack development of a social music platform. 
                             Designed a "Tinder-style" song discovery interface using React Native 
-                            and architected a Node.js/MongoDB backend to integrate with the Spotify Web API. 
-                            Features a Letterboxd-inspired rating system and a personal music diary.</p>
+                            and architected a Node.js/MongoDB backend to integrate with the Spotify Web API.</p>
                         <div class="tags">
                             <span>React Native</span> <span>Node.js</span> <span>MongoDB</span> <span>Spotify API</span> 
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/elsagooey/music-discovery-app" target="_blank" class="btn-small">View Repo</a>
-                            <a href="https://github.com/elsagooey/music-discovery-app" target="_blank" class="btn-small">Project Coming Soon!</a>
+                            <a href="#" class="btn-small">Coming Soon!</a>
                         </div>
                     </div>
                 </div>
@@ -232,31 +244,27 @@
                     </div>
                     <div class="project-content">
                         <h3>E-Commerce Price Tracker</h3>
-                        <p>(APP IN PROGRESS) Full-stack application using spring framework that monitors product price changes 
-                            across web retailers. Implemented web scraping using **Jsoup**, automated data 
-                            persistence with **Spring Data JPA**, and designed a RESTful API to track 
-                            historical price trends for user-defined items.</p>
+                        <p>(APP IN PROGRESS) Full-stack application using Spring framework that monitors product price changes 
+                            across web retailers via Jsoup web scraping and Spring Data JPA.</p>
                         <div class="tags">
-                            <span>Java</span> <span>Spring Framework</span> <span>MySQL</span> <span>Jsoup</span> 
+                            <span>Java</span> <span>Spring</span> <span>MySQL</span> <span>Jsoup</span> 
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/elsagooey/price-tracker" target="_blank" class="btn-small">View Repo</a>
-                            <a href="https://github.com/elsagooey/price-tracker" target="_blank" class="btn-small">Project Coming Soon!</a>
+                            <a href="#" class="btn-small">Coming Soon!</a>
                         </div>
                     </div>
                 </div>
 
-
                 <div class="project-card coming-soon">
                     <div class="project-content">
                         <h3>More Projects Coming Soon!</h3>
-                        <p>Currently working on some exciting new back-end and full-stack applications using Java and Spring Framework. Stay tuned!</p>
+                        <p>Currently working on some exciting new applications. Stay tuned!</p>
                         <div class="tags">
                             <span>In Progress...</span>
                         </div>
                     </div>
                 </div>
-                
             </div> 
         </section>
     </main>
